@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lxh.rabc.mapper.JurisdictionMapper">
+    <insert id="add" parameterType="Jurisdiction">
+        insert into t_jurisdiction (jurisdiction,create_time)
+            values (#{jurisdiction},#{createTime})
+    </insert>
+    <update id="update">
+        update t_jurisdiction set jurisdiction = #{jurisdiction} where id = #{id}
+    </update>
+    <delete id="del" parameterType="Long">
+        delete from t_jurisdiction where id = #{jurisdictionId}
+    </delete>
+
+    <select id="search" resultType="com.lxh.rabc.entity.Jurisdiction">
+        select * from t_jurisdiction
+    </select>
+</mapper>

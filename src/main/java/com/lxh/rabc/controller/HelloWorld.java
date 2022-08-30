@@ -5,6 +5,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloWorld {
+    /**
+     * 测试环境
+     * @return
+     */
     @RequestMapping("hello")
     public String hello(){
         return "hello world";
