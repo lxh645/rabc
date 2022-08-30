@@ -1,5 +1,6 @@
 package com.lxh.rabc.controller;
 
+import com.lxh.rabc.common.Result;
 import com.lxh.rabc.entity.Jurisdiction;
 import com.lxh.rabc.entity.User;
 import com.lxh.rabc.service.JurisdictionService;
@@ -20,8 +21,8 @@ public class JurisdictionController {
     JurisdictionService jurisdictionService;
 
     @RequestMapping("search")
-    public List<Jurisdiction> search(){
-        return jurisdictionService.search();
+    public Result search(){
+        return Result.success(jurisdictionService.search());
     }
 
     /**
@@ -29,23 +30,23 @@ public class JurisdictionController {
      * @param jurisdiction
      */
     @RequestMapping("add")
-    public Integer search(@RequestBody Jurisdiction jurisdiction){
-        return jurisdictionService.add(jurisdiction);
+    public Result search(@RequestBody Jurisdiction jurisdiction){
+        return Result.success(jurisdictionService.add(jurisdiction));
     }
     /**
      * 删除权限
      * @param jurisdictionId
      */
     @RequestMapping("del")
-    public Integer del(Long jurisdictionId){
-        return jurisdictionService.del(jurisdictionId);
+    public Result del(Long jurisdictionId){
+        return Result.success(jurisdictionService.del(jurisdictionId));
     }
     /**
      * 修改权限
      * @param jurisdiction
      */
     @RequestMapping("update")
-    public Integer update(@RequestBody Jurisdiction jurisdiction){
-        return jurisdictionService.update(jurisdiction);
+    public Result update(@RequestBody Jurisdiction jurisdiction){
+        return Result.success(jurisdictionService.update(jurisdiction));
     }
 }

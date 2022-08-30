@@ -1,5 +1,6 @@
 package com.lxh.rabc.controller;
 
+import com.lxh.rabc.common.Result;
 import com.lxh.rabc.entity.User;
 import com.lxh.rabc.service.UserService;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -20,8 +21,8 @@ public class UserController {
     UserService userService;
 
     @RequestMapping("search")
-    public List<User> search(){
-        return userService.search();
+    public Result search(){
+        return Result.success(userService.search());
     }
 
     /**
@@ -29,23 +30,23 @@ public class UserController {
      * @param user
      */
     @RequestMapping("add")
-    public Integer search(@RequestBody User user){
-        return userService.add(user);
+    public Result search(@RequestBody User user){
+        return Result.success(userService.add(user));
     }
     /**
      * 删除用户
      * @param userId
      */
     @RequestMapping("del")
-    public Integer del(Long userId){
-        return userService.del(userId);
+    public Result del(Long userId){
+        return Result.success(userService.del(userId));
     }
     /**
      * 修改用户
      * @param user
      */
     @RequestMapping("update")
-    public Integer update(@RequestBody User user){
-        return userService.update(user);
+    public Result update(@RequestBody User user){
+        return Result.success(userService.update(user));
     }
 }

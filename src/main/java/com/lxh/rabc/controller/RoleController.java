@@ -1,5 +1,6 @@
 package com.lxh.rabc.controller;
 
+import com.lxh.rabc.common.Result;
 import com.lxh.rabc.entity.Role;
 import com.lxh.rabc.entity.User;
 import com.lxh.rabc.service.RoleService;
@@ -21,8 +22,8 @@ public class RoleController {
     RoleService roleService;
 
     @RequestMapping("search")
-    public List<Role> search(){
-        return roleService.search();
+    public Result search(){
+        return Result.success(roleService.search());
     }
 
     /**
@@ -30,24 +31,23 @@ public class RoleController {
      * @param role
      */
     @RequestMapping("add")
-    public Integer search(@RequestBody Role role){
-        return roleService.add(role);
+    public Result search(@RequestBody Role role){
+        return Result.success(roleService.add(role));
     }
     /**
      * 删除角色
      * @param roleId
      */
     @RequestMapping("del")
-    public Integer del(Long roleId){
-        System.out.println(roleId);
-        return roleService.del(roleId);
+    public Result del(Long roleId){
+        return Result.success(roleService.del(roleId));
     }
     /**
      * 修改角色
      * @param role
      */
     @RequestMapping("update")
-    public Integer update(@RequestBody Role role){
-        return roleService.update(role);
+    public Result update(@RequestBody Role role){
+        return Result.success(roleService.update(role));
     }
 }
