@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Mapper
-public interface UserMapper {
+public interface UserMapper  {
     List<User> search();
 
     Integer add(User user);

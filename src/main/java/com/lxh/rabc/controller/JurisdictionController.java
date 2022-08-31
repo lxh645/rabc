@@ -2,14 +2,11 @@ package com.lxh.rabc.controller;
 
 import com.lxh.rabc.common.Result;
 import com.lxh.rabc.entity.Jurisdiction;
-import com.lxh.rabc.entity.User;
 import com.lxh.rabc.service.JurisdictionService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * 权限

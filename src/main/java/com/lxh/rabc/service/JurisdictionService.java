@@ -10,7 +10,7 @@ public interface JurisdictionService {
 
     Integer add(Jurisdiction jurisdiction);
 
-    Integer del(Long jurisdictionId);
+    String del(Long jurisdictionId);
 
     Integer update(Jurisdiction jurisdiction);
 }

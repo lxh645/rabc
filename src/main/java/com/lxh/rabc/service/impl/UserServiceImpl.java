@@ -21,23 +21,44 @@ public class UserServiceImpl implements UserService {
         return userMapper.search();
     }
 
+    /**
+     * 添加用户
+     * @param user
+     * @return
+     */
     @Override
-    public Integer add(User user) {
+    public String add(User user) {
         try {
             user.setCreateTime(LocalDateTime.now());
-            return userMapper.add(user);
+            userMapper.add(user);
+            return "添加成功";
         }catch (Exception e){
-            return -1;
+            return "用户已存在，请换个名字";
         }
     }
 
+    /**
+     * 删除用户
+     * @param userId
+     * @return
+     */
     @Override
-    public Integer del(Long userId) {
-        return userMapper.del(userId);
+    public String del(Long userId) {
+//        Integer del = userMapper.del(userId);
+//        if (del.intValue() ==1 ){
+//            return "删除成功";
+//        }
+//        return "删除失败";
+        return userMapper.del(userId).intValue() == 1 ? "删除成功" : "删除失败";
     }
 
+    /**
+     * 修改用户
+     * @param user
+     * @return
+     */
     @Override
-    public Integer update(User user) {
-        return userMapper.update(user);
+    public String update(User user) {
+        return userMapper.update(user) == 1 ? "删除成功" : "删除失败";
     }
 }

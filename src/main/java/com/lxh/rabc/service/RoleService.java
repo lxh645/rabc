@@ -9,7 +9,7 @@ public interface RoleService {
 
     Integer add(Role role);
 
-    Integer del(Long roleId);
+    Object del(Long roleId);
 
     Integer update(Role role);
 }

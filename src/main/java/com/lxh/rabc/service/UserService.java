@@ -7,9 +7,9 @@ import java.util.List;
 public interface UserService {
     List<User> search();
 
-    Integer add(User user);
+    String add(User user);
 
-    Integer del(Long userId);
+    String del(Long userId);
 
-    Integer update(User user);
+    String update(User user);
 }
